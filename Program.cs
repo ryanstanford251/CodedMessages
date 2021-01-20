@@ -6,14 +6,11 @@ namespace CodedMesssages
     {
         static void Main(string[] args)
         {
-            /*Console.Write("Enter message: ");
+            Console.Write("Enter message: ");
             string plainText = Console.ReadLine();
             if (int.TryParse(Console.ReadLine(), out int key)) { };
-            encrypt(plainText, key);*/
 
-
-            
-            string s = new string(encrypt("hi!", 1));
+            string s = new string(encrypt(plainText, key));
             Console.WriteLine(s);
             
 
