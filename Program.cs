@@ -6,20 +6,25 @@ namespace CodedMesssages
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter message: ");
+            /*Console.Write("Enter message: ");
             string plainText = Console.ReadLine();
-            if(int.TryParse(Console.ReadLine(), out int key))
-            encrypt(plainText, key);
+            if (int.TryParse(Console.ReadLine(), out int key)) { };
+            encrypt(plainText, key);*/
+
+
+            
+            string s = new string(encrypt("hi!", 1));
+            Console.WriteLine(s);
             
 
         }
 
-        static void encrypt(string message, int key)
+        static char[] encrypt(string message, int key)
         {
+            char[] intToChar = new char[message.Length];
             for (int i = 0; i < message.Length; i++)
             {
                 int charToInt = (int)message[i];
-                char[] intToChar = new char[message.Length];
                 if (charToInt > 96 && charToInt < 123) //lowercase
                 {
                     charToInt = ((int)message[i] - 96 + key % 26) + 96;
@@ -34,8 +39,9 @@ namespace CodedMesssages
                 {
                     intToChar[i] = (char)charToInt;
                 }
-                
+
             }
+                return intToChar;
         }
     }
 }
