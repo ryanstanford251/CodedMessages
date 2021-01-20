@@ -40,5 +40,10 @@ namespace CodedMesssages
             }
                 return intToChar;
         }
+
+        static void decrypt()
+        {
+
+        }
     }
 }
