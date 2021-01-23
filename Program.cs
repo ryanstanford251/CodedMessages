@@ -9,6 +9,7 @@ namespace CodedMesssages
         {
             Console.Write("Enter message: ");
             string plainText = Console.ReadLine();
+            Console.Write("Enter key: ");
             if (int.TryParse(Console.ReadLine(), out int key)) { };
 
             string s = new string(letterShiftEncryption(plainText, key));
