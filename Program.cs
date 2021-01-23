@@ -1,4 +1,5 @@
 ﻿using System;
+using static CodedMesssages.Cryptography;
 
 namespace CodedMesssages
 {
@@ -10,10 +11,10 @@ namespace CodedMesssages
             string plainText = Console.ReadLine();
             if (int.TryParse(Console.ReadLine(), out int key)) { };
 
-            string s = new string(encrypt(plainText, key));
+            string s = new string(letterShiftEncryption(plainText, key));
             Console.WriteLine($"Encrypted string {s}");
 
-            string x = new string(decrypt(s, 1));
+            string x = new string(letterShiftDecryption(s, 1));
             Console.WriteLine($"plain text: {x}");
             
 

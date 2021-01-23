@@ -5,7 +5,8 @@ namespace CodedMesssages
     {
         public Cryptography()
         {
-            static char[] encrypt(string message, int key)
+        }
+            public static char[] letterShiftEncryption(string message, int key)
             {
                 char[] intToChar = new char[message.Length];
                 for (int i = 0; i < message.Length; i++)
@@ -30,7 +31,7 @@ namespace CodedMesssages
                 return intToChar;
             }
 
-            static char[] decrypt(string encryptedMessage, int key)
+            public static char[] letterShiftDecryption(string encryptedMessage, int key)
             {
                 char[] intToChar = new char[encryptedMessage.Length];
                 for (int i = 0; i < encryptedMessage.Length; i++)
@@ -54,7 +55,6 @@ namespace CodedMesssages
                 }
                 return intToChar;
             }
-        }
     }
-    }
+    
 }
