@@ -56,12 +56,35 @@ namespace CodedMesssages
             return intToChar;
         }
 
-        public static char[] substitutionEncryption()
+        public static bool isValidSubstitutionKey(string key)
         {
-
+            if (key.Length == 26)
+            {
+                for (int i = 0; i < 26; i++)
+                {
+                    for (int x = i + 1; x < 26; x++)
+                    {
+                        if (key[i] == key[x])
+                        {
+                            Console.WriteLine("Invalid Key");
+                            return false;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid Key");
+                return false;
+            }
+            return true;
         }
 
-        public static char[] substitutionDecryption()
+        public static char[] substitutionEncryption(string key, string plainText)
+        {
+        }
+
+        public static char[] substitutionDecryption(string key, string ecryptedText)
         {
 
         }
