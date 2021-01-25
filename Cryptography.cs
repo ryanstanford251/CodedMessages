@@ -102,10 +102,10 @@ namespace CodedMesssages
             return encryptedMessage;
         }
 
-        public static char[] substitutionDecryption(string key, string ecryptedText)
+        /*public static char[] substitutionDecryption(string key, string ecryptedText)
         {
 
-        }
+        }*/
     }
 
 }

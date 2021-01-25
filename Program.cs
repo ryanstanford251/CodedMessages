@@ -7,7 +7,7 @@ namespace CodedMesssages
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter message: ");
+            /*Console.Write("Enter message: ");
             string plainText = Console.ReadLine();
             Console.Write("Enter key: ");
             if (int.TryParse(Console.ReadLine(), out int key)) { };
@@ -16,7 +16,18 @@ namespace CodedMesssages
             Console.WriteLine($"Encrypted string {s}");
 
             string x = new string(letterShiftDecryption(s, 1));
-            Console.WriteLine($"plain text: {x}");
+            Console.WriteLine($"plain text: {x}");*/
+
+
+            Console.WriteLine("plaintext: ");
+            string plainText = Console.ReadLine();
+            Console.WriteLine("Key: ");
+            string key = Console.ReadLine();
+            if (isValidSubstitutionKey(key))
+            {
+                substitutionEncryption(key, plainText);
+            }
+            
             
 
         }
