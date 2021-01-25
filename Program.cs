@@ -25,7 +25,7 @@ namespace CodedMesssages
             string key = Console.ReadLine();
             if (isValidSubstitutionKey(key))
             {
-                substitutionEncryption(key, plainText);
+               Console.WriteLine(substitutionEncryption(key, plainText));
             }
             
             

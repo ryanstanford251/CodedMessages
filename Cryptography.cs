@@ -83,16 +83,17 @@ namespace CodedMesssages
         public static char[] substitutionEncryption(string key, string plainText)
         {
             char[] encryptedMessage = new char[plainText.Length];
+            char[] intToChar = key.ToCharArray();
             for (int i = 0; i < plainText.Length; i++)
             {
                 int charToInt = (int)plainText[i];
                 if (charToInt > 96 && charToInt < 123) //lowercase
                 {
-                    encryptedMessage[i] = key[charToInt - 96];
+                    encryptedMessage[i] = intToChar[charToInt - 96];
                 }
                 else if (charToInt > 64 && charToInt < 91) //uppercase
                 {
-                    encryptedMessage[i] = key[charToInt - 64];
+                    encryptedMessage[i] = intToChar[charToInt - 64];
                 }
                 else
                 {
