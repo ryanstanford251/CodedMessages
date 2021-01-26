@@ -25,7 +25,10 @@ namespace CodedMesssages
             string key = Console.ReadLine();
             if (isValidSubstitutionKey(key))
             {
-               Console.WriteLine(substitutionEncryption(key, plainText));
+                string result = new string(substitutionEncryption(key, plainText));
+                Console.WriteLine($" Encrypted Text: {result}");
+                string decryptedResult = new string(substitutionDecryption(key, result));
+                Console.WriteLine($"Decrypted Text: {decryptedResult}");
             }
             
             

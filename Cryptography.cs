@@ -103,10 +103,36 @@ namespace CodedMesssages
             return encryptedMessage;
         }
 
-        /*public static char[] substitutionDecryption(string key, string ecryptedText)
+        public static char[] substitutionDecryption(string key, string encryptedText)
         {
+            char[] decryptedText = new char[encryptedText.Length];
 
-        }*/
+            for (int x = 0; x < key.Length; x++)         
+            {
+                for (int i = 0; i < encryptedText.Length; i++)
+                {
+                    int stringToInt = (int)encryptedText[i];
+                    if (stringToInt > 96 && stringToInt < 123)//lowercase
+                    {
+                        if (key[x] == encryptedText[i])
+                        {
+                            stringToInt = x + 97;
+                            decryptedText[i] = (char)stringToInt;
+                        }
+                    }
+                    else if (stringToInt > 64 && stringToInt < 91)//uppercase
+                    {
+                        stringToInt = x + 65;
+                        decryptedText[i] = (char)stringToInt;
+                    }
+                    else 
+                    {
+                        decryptedText[i] = encryptedText[i];
+                    }
+                }
+            }
+            return decryptedText;
+        }
     }
 
 }
