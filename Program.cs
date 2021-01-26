@@ -19,9 +19,9 @@ namespace CodedMesssages
             Console.WriteLine($"plain text: {x}");*/
 
 
-            Console.WriteLine("plaintext: ");
+            Console.Write("plaintext: ");
             string plainText = Console.ReadLine();
-            Console.WriteLine("Key: ");
+            Console.Write("Key: ");
             string key = Console.ReadLine();
             if (isValidSubstitutionKey(key))
             {
