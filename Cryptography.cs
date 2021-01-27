@@ -6,6 +6,19 @@ namespace CodedMesssages
         public Cryptography()
         {
         }
+
+        public static int isValidLetterShiftKey(string key)
+        {
+            key = Console.ReadLine();
+            if (int.TryParse(key, out int numericKey))
+            {
+                return numericKey;
+            }
+            else
+            {
+                return 0;
+            }
+        }
         public static char[] letterShiftEncryption(string message, int key)
         {
             char[] intToChar = new char[message.Length];
