@@ -21,7 +21,7 @@ namespace CodedMesssages
             return numericKey;
             
         }
-        public static char[] letterShiftEncryption(string message, int key)
+        public static string letterShiftEncryption(string message, int key)
         {
             char[] intToChar = new char[message.Length];
             for (int i = 0; i < message.Length; i++)
@@ -43,10 +43,11 @@ namespace CodedMesssages
                 }
 
             }
-            return intToChar;
+            string result = new string(intToChar);
+            return result;
         }
 
-        public static char[] letterShiftDecryption(string encryptedMessage, int key)
+        public static string letterShiftDecryption(string encryptedMessage, int key)
         {
             char[] intToChar = new char[encryptedMessage.Length];
             for (int i = 0; i < encryptedMessage.Length; i++)
@@ -68,7 +69,8 @@ namespace CodedMesssages
                 }
 
             }
-            return intToChar;
+            string result = new string(intToChar);
+            return result;
         }
 
         public static bool isValidSubstitutionKey(string key)
@@ -95,7 +97,7 @@ namespace CodedMesssages
             return true;
         }
 
-        public static char[] substitutionEncryption(string key, string plainText)
+        public static string substitutionEncryption(string key, string plainText)
         {
             char[] encryptedMessage = new char[plainText.Length];
             char[] intToChar = key.ToCharArray();
@@ -115,10 +117,11 @@ namespace CodedMesssages
                     encryptedMessage[i] = plainText[i];
                 }
             }
-            return encryptedMessage;
+            string result = new string(encryptedMessage);
+            return result;
         }
 
-        public static char[] substitutionDecryption(string key, string encryptedText)
+        public static string substitutionDecryption(string key, string encryptedText)
         {
             char[] decryptedText = new char[encryptedText.Length];
 
@@ -146,7 +149,8 @@ namespace CodedMesssages
                     }
                 }
             }
-            return decryptedText;
+            string result = new string(decryptedText);
+            return result;
         }
     }
 
