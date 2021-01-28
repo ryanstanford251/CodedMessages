@@ -7,17 +7,19 @@ namespace CodedMesssages
         {
         }
 
-        public static int isValidLetterShiftKey(string key)
+        public static int isValidLetterShiftKey()
         {
-            key = Console.ReadLine();
-            if (int.TryParse(key, out int numericKey))
+            string key = string.Empty;
+            int numericKey;
+            bool validateKey;
+            do
             {
-                return numericKey;
-            }
-            else
-            {
-                return 0;
-            }
+                key = Console.ReadLine();
+                validateKey = int.TryParse(key, out numericKey);
+
+            } while (validateKey == false);
+            return numericKey;
+            
         }
         public static char[] letterShiftEncryption(string message, int key)
         {
