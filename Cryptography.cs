@@ -7,17 +7,15 @@ namespace CodedMesssages
         {
         }
 
-        public static int isValidLetterShiftKey()
+        public static int isValidLetterShiftKey(string key)
         {
-            string key = string.Empty;
+            
             int numericKey;
             bool validateKey;
-            do
-            {
-                key = Console.ReadLine();
-                validateKey = int.TryParse(key, out numericKey);
+            
+            validateKey = int.TryParse(key, out numericKey);
 
-            } while (validateKey == false);
+            
             return numericKey;
             
         }
